@@ -172,9 +172,6 @@ const NavBar = () => {
               </ul>
             </div>
           )}
-          <div className="md:hidden">
-            <FaBars className="text-white cursor-pointer" />
-          </div>
         </div>
         {userRole && (
           <ul className="md:hidden mt-4">{renderDashboardLink()}</ul>
