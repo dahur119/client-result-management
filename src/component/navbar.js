@@ -1,5 +1,5 @@
-import React, { useContext} from "react";
-import { FaBars } from "react-icons/fa";
+import React, { useContext } from "react";
+// import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { UserRoleContext } from "../UserRoleContext";
 import StudentLogout from "../pages/studentPage/Student.logout";
