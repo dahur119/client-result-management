@@ -8,7 +8,7 @@ const LecturerReset = (props) => {
   const [formData, setFormData] = useState({
     password: "",
   });
-
+  // hello
   const handleChange = (e) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
