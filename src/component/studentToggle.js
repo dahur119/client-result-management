@@ -4,7 +4,7 @@ import StudentRegister from "./studentRegister";
 import StudentLogin from "./studentLogin";
 const StudentFormToggle = () => {
   const [isLoginVisible, setLoginVisible] = useState(true);
-
+  //
   const toggleForm = () => {
     setLoginVisible(!isLoginVisible);
   };
