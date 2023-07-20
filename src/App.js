@@ -1,4 +1,6 @@
+
 import React, { useContext } from "react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./component/navbar";
 import DepartmentLogin from "./component/departmentLogin";

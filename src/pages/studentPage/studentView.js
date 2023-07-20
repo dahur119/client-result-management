@@ -19,6 +19,7 @@ const StudentViewResult = () => {
             headers: { Authorization: `Bearer ${accessToken}` },
           }
         );
+        console.log(response.data.results);
 
         setResults(response.data.results); // Assuming the results array is nested under the 'results' property
         setIsLoading(false);
@@ -84,12 +85,12 @@ const StudentViewResult = () => {
                   <tr key={index}>
                     <td className="px-4 py-2 whitespace-nowrap sm:px-6 md:px-8">
                       <div className="text-sm text-gray-900">
-                        {result.course.courseName}
+                        {result.course ? result.course.courseName : "N/A"}
                       </div>
                     </td>
                     <td className="px-4 py-2 whitespace-nowrap sm:px-6 md:px-8">
                       <div className="text-sm text-gray-900">
-                        {result.course.credit}
+                        {result.course ? result.course.credit : "N/A"}
                       </div>
                     </td>
                     <td className="px-4 py-2 whitespace-nowrap sm:px-6 md:px-8">

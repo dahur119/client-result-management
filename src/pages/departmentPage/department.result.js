@@ -36,6 +36,7 @@ const GetAllResults = () => {
         }
 
         const resultsData = await response.json();
+        console.log("please", resultsData);
         setResults(resultsData);
       } catch (error) {
         console.error("Error retrieving student results:", error);
@@ -74,7 +75,9 @@ const GetAllResults = () => {
                 onClick={() => handleResultClick(result._id)}
               >
                 <td className="py-4 px-6">{result.student.name}</td>
-                <td className="py-4 px-6">{result.course.courseName}</td>
+                <td className="py-4 px-6">
+                  {result.course ? result.course.courseName : "N/A"}
+                </td>
                 <td className="py-4 px-6">{result.score}</td>
                 <td className="py-4 px-6">{result.approved ? "Yes" : "No"}</td>
               </tr>

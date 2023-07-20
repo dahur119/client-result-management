@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function LecturerResultForm(props) {
   const [studentId, setStudentId] = useState("");
@@ -20,10 +22,10 @@ function LecturerResultForm(props) {
         const data = await response.json();
         setStudents(data);
       } else {
-        console.log("Failed to fetch student data");
+        toast.error("Failed to fetch student data");
       }
     } catch (error) {
-      console.log("An error occurred while fetching student data:", error);
+      toast.error("An error occurred while fetching student data:", error);
     }
   };
 
@@ -35,7 +37,7 @@ function LecturerResultForm(props) {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
+        console.log("checking", data);
         setCourses(data);
       } else {
         console.log("Failed to fetch course data");
@@ -71,7 +73,8 @@ function LecturerResultForm(props) {
           body: JSON.stringify({ studentId, courseId, score }),
         }
       );
-      console.log("i'm checking the response", response);
+
+      console.log("checking response hello", response);
 
       if (response.status === 401) {
         // Access token expired or invalid
@@ -82,11 +85,13 @@ function LecturerResultForm(props) {
       if (response.ok) {
         // Result submitted successfully
         // Show a success message or perform any other necessary actions
-        console.log("Result submitted successfully");
+
+        toast.success("submit result  successful!");
         navigate("/lecturer-result");
       } else {
         // Handle error response
         const errorData = await response.json();
+        toast.error("You don't register for the course");
         console.log("Error:", errorData.message);
       }
     } catch (error) {
@@ -180,3 +185,4 @@ function LecturerResultForm(props) {
 }
 
 export default LecturerResultForm;
+//hello

@@ -39,8 +39,7 @@ const StudentRegister = (props) => {
       if (response.status === 200) {
         const { accessToken } = await response.json();
         localStorage.setItem("accessToken", accessToken);
-        toast.success("Login successful!");
-        handleStudentRegister();
+        toast.success("Registration successful!");
       } else {
         const errorData = await response.json();
         toast.error(errorData.message);
@@ -52,10 +51,9 @@ const StudentRegister = (props) => {
     }
   };
 
-  const handleStudentRegister = () => {
-    handleLogin("student");
-    navigate("/student");
-  };
+  // const handleStudentRegister = () => {
+  //   handleLogin("student");
+  // };
 
   return (
     <div className="bg-white rounded-lg shadow-md p-4 w-96">
