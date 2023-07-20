@@ -8,7 +8,7 @@ const LecturerReset = (props) => {
   const [formData, setFormData] = useState({
     password: "",
   });
-  // hello
+
   const handleChange = (e) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -94,3 +94,5 @@ const LecturerReset = (props) => {
 };
 
 export default LecturerReset;
+
+/// hello wolrd are yu
